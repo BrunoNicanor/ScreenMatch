@@ -1,4 +1,5 @@
 import br.com.thinksolutions.ScreemMatch.Modelo.Filme;
+import br.com.thinksolutions.ScreemMatch.Modelo.Series;
 
 public class Principal {
     public static void main(String[] args) {
@@ -25,5 +26,20 @@ public class Principal {
         //Imprimindo média das avaliações
         System.out.println("Média das avaliações do filme: " + filme1.pegaMedia());
 
+        //Criando série
+        Series serie1 = new Series();
+        serie1.setNome("Breaking Bad");
+        serie1.setAnoLancamento(2008);
+        serie1.setIncluidoNoPlano(true);
+
+        serie1.exibirFichaTecnica();
+
+        serie1.setQtdTemporadas(5);
+        serie1.setEpPorTemporada(13);
+        serie1.setDuracaoEp(50);
+
+        serie1.setAtiva(false);
+
+        System.out.println("Duração para maratonar: " + serie1.getDuracaoEmMinutos());
     }
 }
