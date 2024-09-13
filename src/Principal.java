@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import br.com.thinksolutions.ScreemMatch.Modelo.Filme;
 
 public class Principal {
     public static void main(String[] args) {
@@ -9,10 +9,10 @@ public class Principal {
         Filme filme1 = new Filme();
 
         //Atribuindo valores aos atributos
-        filme1.nome = "Avatar";
-        filme1.anoLancamento = 2009;
-        filme1.duracaoEmMinutos = 180;
-        filme1.incluidoNoPlano = true;
+        filme1.setNome("Avatar");
+        filme1.setAnoLancamento(2009);
+        filme1.setDuracaoEmMinutos(180);
+        filme1.setIncluidoNoPlano(true);
 
         //Imprime os valores dos atributos
         filme1.exibirFichaTecnica();
