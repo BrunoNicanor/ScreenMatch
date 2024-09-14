@@ -52,10 +52,11 @@ public class Titulo {
     }
 
     public void exibirFichaTecnica(){
-        System.out.println("Nome: " + nome);
-        System.out.println("Ano de lançamento: " + anoLancamento);
-        System.out.println("Duração em Min: " + duracaoEmMinutos);
-        System.out.println("Incluído no plano: " + incluidoNoPlano);
+        System.out.println("Nome: " + getNome());
+        System.out.println("Ano de lançamento: " + getAnoLancamento());
+        System.out.println("Duração em Min: " + getDuracaoEmMinutos());
+        System.out.println("Incluído no plano: " + isIncluidoNoPlano());
+        System.out.println("");
     }
 
     public void avaliar(double nota){

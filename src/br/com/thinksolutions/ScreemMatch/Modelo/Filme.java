@@ -1,6 +1,8 @@
 package br.com.thinksolutions.ScreemMatch.Modelo;
 
-public class Filme extends Titulo{
+import br.com.thinksolutions.calculos.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
     private String exibicao;
 
     public String getExibicao() {
@@ -9,5 +11,10 @@ public class Filme extends Titulo{
 
     public void setExibicao(String exibicao) {
         this.exibicao = exibicao;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int)pegaMedia() / 2;
     }
 }

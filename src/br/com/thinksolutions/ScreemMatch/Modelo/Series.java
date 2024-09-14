@@ -42,4 +42,5 @@ public class Series extends Titulo{
     public int getDuracaoEmMinutos() {
         return qtdTemporadas * epPorTemporada * duracaoEp;
     }
+
 }
