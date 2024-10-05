@@ -55,7 +55,11 @@ public class Titulo {
         System.out.println("Nome: " + getNome());
         System.out.println("Ano de lançamento: " + getAnoLancamento());
         System.out.println("Duração em Min: " + getDuracaoEmMinutos());
-        System.out.println("Incluído no plano: " + isIncluidoNoPlano());
+        //System.out.println("Incluído no plano: " + isIncluidoNoPlano());
+        if(isIncluidoNoPlano())
+            System.out.println("Incluído no plano: Sim");
+        else
+            System.out.println("Incluído no plano: Não");
         System.out.println("");
     }
 
