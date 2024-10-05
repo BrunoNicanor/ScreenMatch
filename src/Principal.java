@@ -21,8 +21,10 @@ public class Principal {
         filme1.setIncluidoNoPlano(true);
 
         //Imprime os valores dos atributos
-        System.out.println("Filmes");
-        System.out.println("-------");
+        System.out.printf("""
+                Filmes
+                -------
+                """);
         filme1.exibirFichaTecnica();
 
         //Dando notas ao filme
@@ -35,8 +37,10 @@ public class Principal {
         filme1.avaliar(10.0);
 
         //Imprimindo a média das avaliações
-        System.out.println("Avaliação: " + filme1.pegaMedia());
-        System.out.println("-----------------------------------");
+        System.out.printf("""
+                Avaliação: %.1f
+                -----------------------------------
+                """,filme1.pegaMedia());
 
         //Declarando variável com var
         var filme2 = new Filme();
@@ -53,9 +57,11 @@ public class Principal {
         filme2.avaliar(10);
 
         //Imprimindo com somente uma casa decimal após a vígula e pulando linha
-        System.out.printf("Avaliação: %.1f \n", filme2.pegaMedia());
-        System.out.println("-----------------------------------");
-        System.out.println("");
+        System.out.printf("""
+                Avaliação: %.1f 
+                -----------------------------------
+                
+                """,filme2.pegaMedia());
 
         //Criando série
         Series serie1 = new Series();
@@ -69,8 +75,10 @@ public class Principal {
         serie1.setDuracaoEp(50);
 
         //Imprimindo valores de série
-        System.out.println("Séries");
-        System.out.println("-------");
+        System.out.printf("""
+                Séries
+                -------
+                """);
         serie1.exibirFichaTecnica();
         //Exibindo mensagens dinamicas ao invés de true e false
         if (serie1.isAtiva()){
@@ -79,38 +87,47 @@ public class Principal {
             System.out.println("Série Não está ativa");
         }
 
-        System.out.println("Duração para maratonar: " + serie1.getDuracaoEmMinutos() + " min");
-        System.out.println("-----------------------------------");
-        System.out.println("");
+        System.out.printf("""
+                Duração para maratonar: %d minutos
+                -----------------------------------
+                
+                """,serie1.getDuracaoEmMinutos());
 
         //Criando objeto de calculo de tempo de duração de filme
         CalculadoraDeTempo calculadora1 = new CalculadoraDeTempo();
         calculadora1.inclui(filme1);
         calculadora1.inclui(filme2);
 
-        System.out.println("Calculadora Filmes");
-        System.out.println("------------------");
-        System.out.println("Total filmes: " + calculadora1.getTempoTotal());
-        System.out.println("");
+        System.out.printf("""
+                Calculadora Filmes
+                ------------------
+                Total filmes: %d minutos
+                
+                """,calculadora1.getTempoTotal());
 
         //Criando objeto de calculo de tempo de duração de série
         CalculadoraDeTempo calculadora2 = new CalculadoraDeTempo();
         calculadora2.inclui(serie1);
 
-        System.out.println("Calculadora Séries");
-        System.out.println("------------------");
-        System.out.println("Total Séries: " + calculadora2.getTempoTotal());
-        System.out.println("-----------------------------------");
-        System.out.println("");
+        System.out.printf("""
+                Calculadora Séries
+                ------------------
+                Total Séries: %d minutos
+                -----------------------------------
+                
+                """,calculadora2.getTempoTotal());
 
         //Filtrando as avaliações de filmes
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-        System.out.println("Filtragem");
-        System.out.println("---------");
-        System.out.println(filme1.getNome() + ": ");
+
         //Imprimindo mensagem de filtragem
-        filtro.filtra(filme1);
-        System.out.println("");
+        System.out.printf("""
+                Filtragem
+                ---------
+                %s: %s
+                
+                """,filme1.getNome(),
+                filtro.filtra(filme1));
 
         //Filtrando as avaliações de episódios de séries
         Episodio episodio = new Episodio();
@@ -119,19 +136,30 @@ public class Principal {
         episodio.setSerie(serie1);
         episodio.setTotalVisualizacoes(50);
 
-        System.out.println(episodio.getSerie().getNome() + "(" + episodio.getNome() + "): ");
         //Imprindo mensagem de avaliação do episódio
-        filtro.filtra(episodio);
+        System.out.printf("""
+                %s(%s): %s
+                """,episodio.getSerie().getNome(),
+                episodio.getNome(),
+                filtro.filtra(episodio));
 
         //Criando lista de filmes
-        /*ArrayList<Filme> listaFilmes = new ArrayList<>();
+        ArrayList<Filme> listaFilmes = new ArrayList<>();
 
         listaFilmes.add(filme1);
         listaFilmes.add(filme2);
 
-        System.out.println("Tamanho da lista: " + listaFilmes.size());
-        System.out.println("Primeiro filme: " + listaFilmes.get(1).getNome());
-        System.out.println("Média de notas: " + filme2.pegaMedia());
-        System.out.println(listaFilmes.toString());*/
+        System.out.printf("""
+                        --------------------
+                        Listas
+                        --------
+                        Tamanho da lista: %d
+                        Primeiro filme: %s
+                        Média de notas: %.1f
+                        %s
+                        %n""", listaFilmes.size(),
+        listaFilmes.get(1).getNome(),
+        filme2.pegaMedia(),
+        listaFilmes.toString());
     }
 }
