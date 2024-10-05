@@ -52,7 +52,8 @@ public class Principal {
         filme2.avaliar(8);
         filme2.avaliar(10);
 
-        System.out.println("Avaliação: " + filme2.pegaMedia());
+        //Imprimindo com somente uma casa decimal após a vígula e pulando linha
+        System.out.printf("Avaliação: %.1f \n", filme2.pegaMedia());
         System.out.println("-----------------------------------");
         System.out.println("");
 
@@ -71,11 +72,13 @@ public class Principal {
         System.out.println("Séries");
         System.out.println("-------");
         serie1.exibirFichaTecnica();
+        //Exibindo mensagens dinamicas ao invés de true e false
         if (serie1.isAtiva()){
             System.out.println("Série está Ativa");
         }else{
             System.out.println("Série Não está ativa");
         }
+
         System.out.println("Duração para maratonar: " + serie1.getDuracaoEmMinutos() + " min");
         System.out.println("-----------------------------------");
         System.out.println("");
@@ -116,8 +119,8 @@ public class Principal {
         episodio.setSerie(serie1);
         episodio.setTotalVisualizacoes(50);
 
-        //Imprindo mensagem de avaliação do episódio
         System.out.println(episodio.getSerie().getNome() + "(" + episodio.getNome() + "): ");
+        //Imprindo mensagem de avaliação do episódio
         filtro.filtra(episodio);
 
         //Criando lista de filmes
