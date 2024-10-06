@@ -49,4 +49,8 @@ public class Series extends Titulo{
         return qtdTemporadas * epPorTemporada * duracaoEp;
     }
 
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + " (" + this.getAnoLancamento() + ") ";
+    }
 }
