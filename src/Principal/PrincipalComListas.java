@@ -6,6 +6,7 @@ import br.com.thinksolutions.ScreemMatch.Modelo.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -58,12 +59,17 @@ public class PrincipalComListas {
 
         //Ordenando a lista
         Collections.sort(personagens);
-        System.out.println("Depois da ordenação: ");
+        System.out.println("\nPersonagens Depois da ordenação: ");
         System.out.println(personagens);
 
         //Ordenando lista de objetos pelo nome
         Collections.sort(lista);
-        System.out.println("Depois da ordenação: ");
+        System.out.println("\nObjetos Depois da ordenação: ");
+        System.out.println(lista);
+
+        //Ordenando a lista de objetos pelo ano de lançamento
+        lista.sort(Comparator.comparing(Titulo::getAnoLancamento));
+        System.out.println("\nOrdenando por ano de lançamento: ");
         System.out.println(lista);
     }
 }
