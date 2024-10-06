@@ -5,6 +5,11 @@ import br.com.thinksolutions.calculos.Classificavel;
 public class Filme extends Titulo implements Classificavel {
     private String exibicao;
 
+    public Filme(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
+    }
+
+
     public String getExibicao() {
         return exibicao;
     }

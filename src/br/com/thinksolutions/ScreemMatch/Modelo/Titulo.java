@@ -8,8 +8,14 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private double totalDeAvaliacoes;
 
-    //Getters
+    //Construtor
 
+    public Titulo(String nome, int anoLancamento) {
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
+    }
+
+    //Getters
     public String getNome() {
         return nome;
     }

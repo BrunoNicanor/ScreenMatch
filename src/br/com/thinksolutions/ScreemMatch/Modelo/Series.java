@@ -6,6 +6,12 @@ public class Series extends Titulo{
     private int duracaoEp;
     private boolean ativa;
 
+    public Series(String nome, int anoLancamento, int duracaoEp, int epPorTemporada) {
+        super(nome, anoLancamento);
+        this.duracaoEp = duracaoEp;
+        this.epPorTemporada = epPorTemporada;
+    }
+
     public int getQtdTemporadas() {
         return qtdTemporadas;
     }
