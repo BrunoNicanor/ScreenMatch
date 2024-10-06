@@ -1,3 +1,5 @@
+package Principal;
+
 import br.com.thinksolutions.ScreemMatch.Modelo.Episodio;
 import br.com.thinksolutions.ScreemMatch.Modelo.Filme;
 import br.com.thinksolutions.ScreemMatch.Modelo.Series;
@@ -12,11 +14,9 @@ public class Principal {
         //Scanner entrada = new Scanner(System.in);
 
         //Criando Objeto
-        Filme filme1 = new Filme();
+        Filme filme1 = new Filme("Avatar",2009);
 
         //Atribuindo valores aos atributos
-        filme1.setNome("Avatar");
-        filme1.setAnoLancamento(2009);
         filme1.setDuracaoEmMinutos(180);
         filme1.setIncluidoNoPlano(true);
 
@@ -43,10 +43,8 @@ public class Principal {
                 """,filme1.pegaMedia());
 
         //Declarando variável com var
-        var filme2 = new Filme();
+        var filme2 = new Filme("A Origem", 2010);
 
-        filme2.setNome("A Origem");
-        filme2.setAnoLancamento(2010);
         filme2.setDuracaoEmMinutos(150);
         filme2.setIncluidoNoPlano(true);
 
@@ -64,15 +62,13 @@ public class Principal {
                 """,filme2.pegaMedia());
 
         //Criando série
-        Series serie1 = new Series();
-        serie1.setNome("Breaking Bad");
-        serie1.setAnoLancamento(2008);
+        Series serie1 = new Series("Breaking Bad", 2008,50,13);
         serie1.setIncluidoNoPlano(true);
         serie1.setAtiva(false);
 
         serie1.setQtdTemporadas(5);
-        serie1.setEpPorTemporada(13);
-        serie1.setDuracaoEp(50);
+        /*serie1.setEpPorTemporada(13);
+        serie1.setDuracaoEp(50);*/
 
         //Imprimindo valores de série
         System.out.printf("""
@@ -158,8 +154,8 @@ public class Principal {
                         Média de notas: %.1f
                         %s
                         %n""", listaFilmes.size(),
-        listaFilmes.get(1).getNome(),
-        filme2.pegaMedia(),
-        listaFilmes.toString());
+                listaFilmes.get(1).getNome(),
+                filme2.pegaMedia(),
+                listaFilmes.toString());
     }
 }
