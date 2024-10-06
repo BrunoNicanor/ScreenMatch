@@ -5,6 +5,7 @@ import br.com.thinksolutions.ScreemMatch.Modelo.Series;
 import br.com.thinksolutions.ScreemMatch.Modelo.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -45,5 +46,24 @@ public class PrincipalComListas {
             if(item instanceof Filme filme)
                 System.out.println("Classsificação: " + filme.getClassificacao());
         }
+
+        ArrayList<String> personagens = new ArrayList<>();
+        personagens.add("Jon Snow");
+        personagens.add("Sansa Stark");
+        personagens.add("Tyrion Lanister");
+        personagens.add("Hodor");
+        //Imprimindo personagens da listas
+        System.out.println("Antes da ordenação: ");
+        System.out.println(personagens);
+
+        //Ordenando a lista
+        Collections.sort(personagens);
+        System.out.println("Depois da ordenação: ");
+        System.out.println(personagens);
+
+        //Ordenando lista de objetos pelo nome
+        Collections.sort(lista);
+        System.out.println("Depois da ordenação: ");
+        System.out.println(lista);
     }
 }
