@@ -1,6 +1,6 @@
 package br.com.thinksolutions.ScreemMatch.Modelo;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoLancamento;
     private int duracaoEmMinutos;
@@ -76,5 +76,10 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo OutroNome) {
+        return this.getNome().compareTo(OutroNome.getNome());
     }
 }
