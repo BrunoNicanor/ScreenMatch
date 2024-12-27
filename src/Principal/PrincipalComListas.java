@@ -67,7 +67,7 @@ public class PrincipalComListas {
         System.out.println("\nObjetos Depois da ordenação: ");
         System.out.println(lista);
 
-        //Ordenando a lista de objetos pelo ano de lançamento
+        //ordenando a lista de objetos pelo ano de lançamento
         lista.sort(Comparator.comparing(Titulo::getAnoLancamento));
         System.out.println("\nOrdenando por ano de lançamento: ");
         System.out.println(lista);
